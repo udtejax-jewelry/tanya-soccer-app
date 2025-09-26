@@ -46,7 +46,7 @@ def first_existing(*names: str) -> Optional[str]:
 DEFAULT_PALLET_PATH = first_existing("football_palette.png", "football_palette.jpg")
 DEFAULT_CARD_PATH   = first_existing("football_card.png", "football_card.jpg")
 
-GEMINI_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+GEMINI_KEY = st.secrets.get("GEMINI_API_KEY", os.getenv("GEMINI_API_KEY"))
 
 # Session state
 for key, default in [
